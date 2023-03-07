@@ -1,7 +1,5 @@
 package com.healthCare.appointmentmanagement.model;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,11 +11,12 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="labAppointment")
-public class labAppointment {
+@Table(name="LabAppointment")
+public class LabAppointment {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "labAppointmentId")
-    private String labAppointmentId;
+    private Long labAppointmentId;
     @Column (name = "labId")
     private String labId;
     @Column (name = "serviceId")
