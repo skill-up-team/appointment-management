@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.sql.Time;
+import java.util.Date;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -26,7 +29,7 @@ public class DoctorAppointment {
     @Column (name = "status")
     private String status;
     @Column (name = "date")
-    private String date;
+    private Date date;
     @Column (name = "time")
-    private String time;
+    private Time time;
 }
