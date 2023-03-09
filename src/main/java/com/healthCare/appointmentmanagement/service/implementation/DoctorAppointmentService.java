@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class DocterAppointmentService implements IDoctorAppointmentService {
+public class DoctorAppointmentService implements IDoctorAppointmentService {
 
     @Autowired
     private DoctorAppointmentRepository doctorAppointmentRepository;
