@@ -14,18 +14,18 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="DoctorAppointment")
+@Table(name="doctorAppointment")
 public class DoctorAppointment {
     @Id
     @Column (name = "docAppointmentId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long docAppointmentId;
     @Column (name = "doctorId")
-    private String doctorId;
+    private Long doctorId;
     @Column (name = "hospitalId")
-    private String hospitalId;
+    private Long hospitalId;
     @Column (name = "patientId")
-    private String patientId;
+    private Long patientId;
     @Column (name = "status")
     private String status;
     @Column (name = "date")
