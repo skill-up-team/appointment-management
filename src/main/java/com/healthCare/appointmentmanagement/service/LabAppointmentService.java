@@ -1,8 +1,7 @@
-package com.healthCare.appointmentmanagement.service.implementation;
+package com.healthCare.appointmentmanagement.service;
 
 import com.healthCare.appointmentmanagement.model.LabAppointment;
 import com.healthCare.appointmentmanagement.repository.LabAppointmentRepository;
-import com.healthCare.appointmentmanagement.service.ILabAppointmentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,18 +9,22 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 @Slf4j
-public class LabAppointmentService implements ILabAppointmentService {
+public class LabAppointmentService {
 
     @Autowired
-    private LabAppointmentRepository labAppointmentRepository;
+    private static LabAppointmentRepository labAppointmentRepository;
 
-    @Override
-    public LabAppointment create(LabAppointment labAppointment){
+
+    public static LabAppointment create(LabAppointment labAppointment){
         return labAppointmentRepository.save(labAppointment);
     }
-    @Override
-    public LabAppointment findById(Long docAppointmentId){
+
+    public static LabAppointment findById(Long docAppointmentId){
         return labAppointmentRepository.findById(docAppointmentId).get();
+    }
+
+    public static List<LabAppointment> findAll(){
+        return labAppointmentRepository.findAll();
     }
     
 }
