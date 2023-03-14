@@ -14,18 +14,20 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="labAppointment")
-public class LabAppointment {
+@Table(name="doctorAppointment")
+public class DoctorAppointment {
     @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column (name = "labId")
-    private Long labId;
-    @Column (name = "serviceId")
-    private Long serviceId;
+    @Column (name = "doctorId")
+    private Long doctorId;
+    @Column (name = "hospitalId")
+    private Long hospitalId;
     @Column (name = "patientId")
     private Long patientId;
+    @Column (name = "status")
+    private String status;
     @Column (name = "date")
     private Date date;
     @Column (name = "time")
