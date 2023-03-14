@@ -16,10 +16,10 @@ import java.util.Date;
 @Builder
 @Table(name="labAppointment")
 public class LabAppointment {
+    @jakarta.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "labAppointmentId")
-    private Long labAppointmentId;
+    private Long id;
     @Column (name = "labId")
     private Long labId;
     @Column (name = "serviceId")
@@ -30,4 +30,5 @@ public class LabAppointment {
     private Date date;
     @Column (name = "time")
     private Time time;
+
 }

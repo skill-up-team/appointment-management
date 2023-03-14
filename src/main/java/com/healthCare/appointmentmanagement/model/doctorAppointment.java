@@ -16,10 +16,10 @@ import java.util.Date;
 @Builder
 @Table(name="doctorAppointment")
 public class DoctorAppointment {
+    @jakarta.persistence.Id
     @Id
-    @Column (name = "docAppointmentId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long docAppointmentId;
+    private Long id;
     @Column (name = "doctorId")
     private Long doctorId;
     @Column (name = "hospitalId")
@@ -32,4 +32,5 @@ public class DoctorAppointment {
     private Date date;
     @Column (name = "time")
     private Time time;
+
 }
