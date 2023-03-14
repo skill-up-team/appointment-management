@@ -33,13 +33,13 @@ public class LabAppointmentController {
 
     @GetMapping("/{id}")
     public ResponseEntity<LabAppointmentDto> FindById(@PathVariable Long id){
-        LabAppointment labAppointment = LabAppointmentService.findById(id);
+        LabAppointment labAppointment = labAppointmentService.findById(id);
         return ResponseEntity.ok(modelMapper.map(labAppointment,LabAppointmentDto.class));
     }
 
     @GetMapping
     public List<LabAppointmentDto> FindAll(){
-        List<LabAppointment> labAppointmentList = LabAppointmentService.findAll();
+        List<LabAppointment> labAppointmentList = labAppointmentService.findAll();
         return labAppointmentList.stream()
                 .map(labAppointment -> modelMapper.map(labAppointment, LabAppointmentDto.class))
                 .collect(Collectors.toList());

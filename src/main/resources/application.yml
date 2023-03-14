@@ -1,0 +1,27 @@
+
+server:
+  port: 8082
+  servlet:
+    context-path: /appointment-management
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/appointment
+    username: postgres
+    password: JAnith@uom@2018
+    driverClassName: org.postgresql.Driver
+    validationQuery: "SELECT 1"
+  jpa:
+    properties:
+      hibernate:
+        show-sql: false
+        use_sql_comments: false
+        format_sql: false
+  sql:
+    init:
+      platform: postgres
+
+  # swagger-ui custom path
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
