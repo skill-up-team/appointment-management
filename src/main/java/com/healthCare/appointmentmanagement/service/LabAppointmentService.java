@@ -12,18 +12,18 @@ import java.util.List;
 public class LabAppointmentService {
 
     @Autowired
-    private static LabAppointmentRepository labAppointmentRepository;
+    private LabAppointmentRepository labAppointmentRepository;
 
 
-    public static LabAppointment create(LabAppointment labAppointment){
+    public LabAppointment create(LabAppointment labAppointment){
         return labAppointmentRepository.save(labAppointment);
     }
 
-    public static LabAppointment findById(Long docAppointmentId){
+    public LabAppointment findById(Long docAppointmentId){
         return labAppointmentRepository.findById(docAppointmentId).get();
     }
 
-    public static List<LabAppointment> findAll(){
+    public List<LabAppointment> findAll(){
         return labAppointmentRepository.findAll();
     }
     

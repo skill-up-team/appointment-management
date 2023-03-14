@@ -29,7 +29,7 @@ public class DoctorAppointmentController  {
     @PostMapping
     public ResponseEntity<DoctorAppointmentDto> create(@RequestBody DoctorAppointmentDto doctorAppointmentDto){
         DoctorAppointment doctorAppointment= modelMapper.map(doctorAppointmentDto,DoctorAppointment.class);
-        doctorAppointment = DoctorAppointmentService.create(doctorAppointment);
+        doctorAppointment = doctorAppointmentService.create(doctorAppointment);
         return ResponseEntity.status(HttpStatus.CREATED).body(modelMapper.map(doctorAppointment,DoctorAppointmentDto.class));
     }
 

@@ -14,29 +14,29 @@ import java.util.List;
 public class DoctorAppointmentService{
 
     @Autowired
-    private static DoctorAppointmentRepository doctorAppointmentRepository;
+    private  DoctorAppointmentRepository doctorAppointmentRepository;
 
 
 
-    public static DoctorAppointment create(DoctorAppointment doctorAppointment){
+    public DoctorAppointment create(DoctorAppointment doctorAppointment){
         return doctorAppointmentRepository.save(doctorAppointment);
     }
 
 
-    public static DoctorAppointment update(DoctorAppointment doctorAppointment){
+    public DoctorAppointment update(DoctorAppointment doctorAppointment){
         return doctorAppointmentRepository.save(doctorAppointment);
     }
 
-    public static DoctorAppointment findById(Long docAppointmentId){
+    public DoctorAppointment findById(Long docAppointmentId){
         return doctorAppointmentRepository.findById(docAppointmentId).get();
     }
 
-    public static List<DoctorAppointment> findAllByDoctorIdAndDate(Long DoctorId, Date date){
+    public List<DoctorAppointment> findAllByDoctorIdAndDate(Long DoctorId, Date date){
         return doctorAppointmentRepository.findAllByDoctorIdAndDate(DoctorId,date);
     }
 
 
-    public static List<DoctorAppointment> findAllByPatientId(Long PatientId){
+    public List<DoctorAppointment> findAllByPatientId(Long PatientId){
         return doctorAppointmentRepository.findAllByPatientId(PatientId);
     }
 }
