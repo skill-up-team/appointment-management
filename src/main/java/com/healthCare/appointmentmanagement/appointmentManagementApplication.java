@@ -1,4 +1,4 @@
-package com.healthcare.appointmentmanagement;
+package com.healthCare.appointmentmanagement;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
