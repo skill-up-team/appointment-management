@@ -1,4 +1,4 @@
-package com.healthCare.appointmentmanagement;
+package com.healthcare.Appointmentmanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
