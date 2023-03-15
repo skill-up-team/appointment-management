@@ -15,11 +15,10 @@ import java.util.Date;
 @Builder
 public class DoctorAppointmentDto {
     private Long id;
-    private String doctorId;
-    private String hospitalId;
-    private String patientId;
+    private Long doctorId;
+    private Long hospitalId;
+    private Long patientId;
     private String status;
     private Date date;
     private Time time;
 }
-

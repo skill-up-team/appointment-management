@@ -14,10 +14,11 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table(name="labAppointment")
+@Table(name="lab_appointment")
 public class LabAppointment {
     @jakarta.persistence.Id
     @Id
+    @Column (name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column (name = "labId")
@@ -30,5 +31,4 @@ public class LabAppointment {
     private Date date;
     @Column (name = "time")
     private Time time;
-
 }

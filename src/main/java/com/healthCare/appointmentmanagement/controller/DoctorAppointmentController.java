@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -39,16 +38,16 @@ public class DoctorAppointmentController  {
         return ResponseEntity.ok(modelMapper.map(doctorAppointment,DoctorAppointmentDto.class));
     }
 
-    @GetMapping
-    public List<DoctorAppointmentDto> findAllByPatientId(Long id){
+    @GetMapping("/patient/{id}")
+    public List<DoctorAppointmentDto> findAllByPatientId(@PathVariable Long id){
         List<DoctorAppointment> doctorAppointmentList = doctorAppointmentService.findAllByPatientId(id);
         return doctorAppointmentList.stream()
                 .map(doctorAppointment -> modelMapper.map(doctorAppointment, DoctorAppointmentDto.class))
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/{id}/date/{date}")
-    public List<DoctorAppointmentDto> findAllByDoctorIdAndDate(Long id, Date date){
+    @GetMapping("id/{id}/date/{date}")
+    public List<DoctorAppointmentDto> findAllByDoctorIdAndDate(@PathVariable("id") Long id, @PathVariable("date") Date date){
         List<DoctorAppointment> doctorAppointmentList = doctorAppointmentService.findAllByDoctorIdAndDate(id,date);
         return doctorAppointmentList.stream()
                 .map(doctorAppointment -> modelMapper.map(doctorAppointment, DoctorAppointmentDto.class))

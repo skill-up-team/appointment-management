@@ -14,9 +14,9 @@ import java.util.Date;
 @Builder
 public class LabAppointmentDto {
     private Long id;
-    private String labId;
-    private String serviceId;
-    private String patientId;
+    private Long labId;
+    private Long serviceId;
+    private Long patientId;
     private Date date;
     private Time time;
 }
