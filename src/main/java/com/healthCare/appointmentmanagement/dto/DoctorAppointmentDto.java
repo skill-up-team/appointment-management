@@ -1,13 +1,12 @@
 package com.healthCare.appointmentmanagement.dto;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
@@ -19,6 +18,7 @@ public class DoctorAppointmentDto {
     private Long hospitalId;
     private Long patientId;
     private String status;
-    private Date date;
+    private LocalDate date;
     private Time time;
 }
+
