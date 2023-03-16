@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -31,7 +31,7 @@ public class DoctorAppointmentService{
         return doctorAppointmentRepository.findById(docAppointmentId).get();
     }
 
-    public List<DoctorAppointment> findAllByDoctorIdAndDate(Long DoctorId, Date date){
+    public List<DoctorAppointment> findAllByDoctorIdAndDate(Long DoctorId, LocalDate date){
         return doctorAppointmentRepository.findAllByDoctorIdAndDate(DoctorId,date);
     }
 

@@ -19,8 +19,8 @@ public class LabAppointmentService {
         return labAppointmentRepository.save(labAppointment);
     }
 
-    public LabAppointment findById(Long docAppointmentId){
-        return labAppointmentRepository.findById(docAppointmentId).get();
+    public LabAppointment findById(Long labAppointmentId){
+        return labAppointmentRepository.findById(labAppointmentId).get();
     }
 
     public List<LabAppointment> findAll(){
